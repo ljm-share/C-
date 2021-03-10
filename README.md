@@ -3,8 +3,10 @@
 一.数据处理
 </p>
 1.不要随意跨越数据类型限制，会导致数据溢出.  
-2.溢出分为上溢和下溢.  
-3.```cout.setf(ios_base::fixed,ios_base::floatfield);```  
+
+3.溢出分为上溢和下溢.  
+
+5.`cout.setf(ios_base::fixed,ios_base::floatfield);`   
 //ios_base::fixed是设置cout为定点输出格式  
 //ios_base::floatfileld是设置输出时按照浮点格式进行输出,小数点后面有6位
 
