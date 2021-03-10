@@ -1,6 +1,6 @@
-#C++笔记  
+<h1>C++笔记</h1>  
 
-##一.数据处理  
+<h3>一.数据处理<h3>  
 
 1.不要随意跨越数据类型限制，会导致数据溢出.  
 
@@ -61,5 +61,5 @@ Press any key to continue.
 
 7.总结:整形从小到大依次是:bool,char,signed char,unsigned char,short,unsigned short,int,long,unsigned long,long long,wchar_t
 
-##二.复合类型
+<h1>二.复合类型</h3>
 
