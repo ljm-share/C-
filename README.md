@@ -65,7 +65,7 @@ Press any key to continue.
 
 ---
 
-<h1>二.复合类型</h1>  
+<h2>二.复合类型</h2>  
 
 1.数组  
 >声明数组的通用格式如下:```typeName arrayName[arraySize]```,arraySize指定元素数目,必须为整形常数或者const值,也可以为常量表达式，这个限制是可以使用new运算符来避开.  
