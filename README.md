@@ -1,5 +1,7 @@
 <h1>C++笔记</h1>  
 
+---
+
 <h2>一.数据处理</h2>  
 
 1.不要随意跨越数据类型限制，会导致数据溢出.  
@@ -59,11 +61,14 @@ Press any key to continue.
 
 6.auto,auto是C语言关键词,自动判断变量的类型,容易出错,后面做详细解释
 
-7.总结:整形从小到大依次是:bool,char,signed char,unsigned char,short,unsigned short,int,long,unsigned long,long long,wchar_t
+7.总结:整形从小到大依次是:bool,char,signed char,unsigned char,short,unsigned short,int,long,unsigned long,long long,wchar_t  
+
+---
 
 <h1>二.复合类型</h1>  
 
 1.数组  
-①声明数组的通用格式如下:```typeName arrayName[arraySize]```,arraySize指定元素数目,必须为整形常数或者const值,也可以为常量表达式，这个限制是可以使用new运算符来避开.  
-②数组都是从0开始编号的,数组的很多用途是可以单独访问数组元素,使用下标或索引对元素进行编号.
+>声明数组的通用格式如下:```typeName arrayName[arraySize]```,arraySize指定元素数目,必须为整形常数或者const值,也可以为常量表达式，这个限制是可以使用new运算符来避开.  
+
+>数组都是从0开始编号的,数组的很多用途是可以单独访问数组元素,使用下标或索引对元素进行编号.
 [array索引图](https://github.com/ljm-share/C-aa/blob/0e281d45b4a994fb1bc5cbb8abbf9e2ad49a1c5c/%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95.jpg?raw=true)
