@@ -89,8 +89,8 @@ int num_elements = sizeof things / sizeof (short)
 
 <h3>2.字符串</h3>  
 >C++处理字符串的两种方式:1.C-风格字符串(C-style string),2.基于string类库
-字符串提供了处理文本信息的便捷方式,可以将字符串存储在char数组中
-C-风格字符串有一种特殊的性质:以空字符(null character)结尾,空字符被写作\0,其ASCII码为0,用来标记字符串的结尾.
+>字符串提供了处理文本信息的便捷方式,可以将字符串存储在char数组中
+>C-风格字符串有一种特殊的性质:以空字符(null >character)结尾,空字符被写作\0,其ASCII码为0,用来标记字符串的结尾.
 ```
 例如:
 char dog[8] = {'1','2','3','4',' ','I'};            //not a string;
