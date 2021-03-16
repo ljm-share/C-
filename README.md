@@ -104,3 +104,73 @@ char cat[8] = {'1','2','3','4','\0'};               //a string;
 >在使用CodeBlock运行数组题时,输入的数组内容超过了本该存在的最大范围,则第一次输入的值将溢出,导致输出不确定  
 
 >cin使用空白(空格,制表符和换行符)来确定字符串的结束位置.这算是cin函数的一个高级特性
+
+>面向行输入:`cin.getline('name','number')`,`getline()`函数读取整行,假如设置输入字符串最大值number=20,则最大输入字符值只能为19,余下的一个空间用于存储自动在结尾处添加的空字符,`getline()`成员函数在读取指定数目的字符或遇到换行符时停止读取  
+
+>面向行输入:`get()`,此变体的工作方式与getline()类似,接受的参数都想同,解释参数的方式也相同,都读取到尾行,但是`get()`函数并不再读取,将换行符留在了输入队列中,导致无法连续使用两个`get()`函数
+```
+例如:
+1.
+    cin.get(name,ArSize);
+    cin.get(name2,ArSize);      //Not Allow,It's will be problem
+
+2.
+    cin.get(name,ArSize);
+    cin.get();
+    cin.get(name2,ArSize);      //Allow
+    
+3. 
+    cin.get(name,ArSize).get();
+    cin.get(name2,ArSize);
+```
+>为了避免此类错误,例二演示了只要再使用一个 `cin.get()`进行打断即可,例三使用的方法更为简单方便.  
+
+```
+关于空行和其他问题:
+1.当`getline()`和`get()`读取空行时,将会设置失效位,这意味着输入的内容将被阻断,使用命令来进行避免:cin.clear()
+#include<iostream>
+int main()
+{
+    using namespace std;
+    const int size = 20;
+    char name[size];
+    char name2[size];
+
+    cout << "Enter name:\n";
+    cin.get(name,size).clear();
+    cout << "Enter name:\n";
+    cin.get(name2,size).clear(;
+    cout << "Name: " << name << endl;
+    cout << "Name2: " << name2 << endl;
+//此程序运行第一个值输入为空值,再输入第二个值时,那么此时第二个的值将被第一个变量读取,最终输入第一个值为第二次输入的有效值
+}
+
+
+改变程序:
+#include<iostream>
+int main()
+{
+    using namespace std;
+    const int size = 20;
+    char name[size];
+    char name2[size];
+
+    cout << "Enter name:\n";
+    cin.get(name,size).get();
+    cout << "Enter name:\n";
+    cin.get(name2,size).clear();
+    cout << "Name: " << name << endl;
+    cout << "Name2: " << name2 << endl;
+
+}
+//此时程序输入第一个值为空值,1.假如输入第二个值也是空值那么两个的输出均为空值,2.如果第一次输入为空值,然后再输入一个有效值,那么则提示继续输入第二个值,则会正常输出
+
+
+2.问题2:假如输入的字符串可能比分配的空间大,则get()和getline()将把多出来的字符留在输入队列中,而getline()还会设置失效位,并关闭后面的输入
+```  
+
+<h3>3.String类</h3>
+```
+string str1;             //str1的声明创建一个长度为0的string对象,程序会根据输入自动调整str1的长度
+与数组相比较,使用string对象更方便,更安全.理论上来说,可以将char数组视为一组用于存储一个字符串的char存储单元,而string类变量是一个表示字符串的实体
+```
